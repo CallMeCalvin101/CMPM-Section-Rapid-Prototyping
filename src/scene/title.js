@@ -3,12 +3,12 @@ class Title extends Phaser.Scene {
         super('titleScene');
     }
 
-    proload() {
+    preload() {
 
     }
 
     create() {
-
+        this.scene.start('play1Scene');
     }
     
 }
