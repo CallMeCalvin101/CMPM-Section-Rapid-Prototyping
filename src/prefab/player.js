@@ -1,7 +1,10 @@
 class Player extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture) {
-        super(scene, x, y, texture, 0);
+    constructor(scene, x, y, texture1, texture2) {
+        super(scene, x, y, texture1, 0);
         scene.add.existing(this);
+
+        this.normalState = texture1;
+        this.jumpState = texture2;
         
         this.floor = y
         this.jumpHeight = 240
@@ -20,6 +23,7 @@ class Player extends Phaser.GameObjects.Sprite {
 
     update() {
         if (this.isJump == true) {
+            this.setTexture(this.jumpState);
             this.y -= this.jumpSpeed;
             if (this.y <= this.MAX_JUMP_HEIGHT) {
                 this.isJump = false;
@@ -32,6 +36,7 @@ class Player extends Phaser.GameObjects.Sprite {
 
         if (this.y >= this.floor) {
             this.canJump = true;
+            this.setTexture(this.normalState);
         }
     }
 }
