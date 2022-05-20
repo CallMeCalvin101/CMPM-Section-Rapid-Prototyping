@@ -15,8 +15,11 @@ class Play1 extends Phaser.Scene {
 
         this.player = new Player(this, 320, 400, 'rolypoly-normal', 'rolypoly-rolled');
 
-        this.enemy1 = new Enemy(this, game.config.width, game.config.height - 50, 'snail');
-        this.enemy2 = new Enemy(this, game.config.width + 300, game.config.height - 50, 'snail');
+        this.destroyedCounter = {
+            destroyedCount: 0
+        }
+        this.enemy1 = new Enemy(this, game.config.width, game.config.height - 50, 'snail', this.destroyedCounter);
+        this.enemy2 = new Enemy(this, game.config.width + 300, game.config.height - 50, 'snail', this.destroyedCounter);
 
         this.pointer = this.input.activePointer;
 
@@ -39,6 +42,10 @@ class Play1 extends Phaser.Scene {
 
         this.enemy1.update();
         this.enemy2.update();
+
+        if (this.destroyedCounter.destroyedCount == 2) {
+            this.scene.start("play2Scene");
+        }
     }
 
 }
