@@ -51,18 +51,18 @@ class Play2 extends Phaser.Scene {
         }
         if (this.enemy1.checkCollision(this.player)) {
             this.enemy1.setSpeed(0);
-            //this.endGame();
+            this.endGame();
         }
 
         if (this.enemy2.checkCollision(this.player)) {
             this.enemy2.setSpeed(0);
-            //this.endGame();
+            this.endGame();
         }
     }
 
     endGame() {
         console.log("end");
-        this.time.delayedCall(2000, () => {
+        this.time.delayedCall(1000, () => {
             this.scene.start("titleScene");
         });
     }
