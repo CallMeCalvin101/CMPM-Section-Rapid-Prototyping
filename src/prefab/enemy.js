@@ -8,7 +8,7 @@ class Enemy extends Phaser.GameObjects.Sprite {
 
         //this.x = game.config.width;
 
-        this.setSpeed(1.5);
+        this.setSpeed(2.5);
 
         // add object to existing scene
         scene.add.existing(this);

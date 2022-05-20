@@ -8,7 +8,7 @@ class Player extends Phaser.GameObjects.Sprite {
         
         this.floor = y
         this.jumpHeight = 240
-        this.jumpSpeed = 10;
+        this.jumpSpeed = 5;
         this.isJump = false;
         this.canJump = true;
         this.MAX_JUMP_HEIGHT = this.floor - this.jumpHeight;
@@ -39,4 +39,6 @@ class Player extends Phaser.GameObjects.Sprite {
             this.setTexture(this.normalState);
         }
     }
+
+
 }
