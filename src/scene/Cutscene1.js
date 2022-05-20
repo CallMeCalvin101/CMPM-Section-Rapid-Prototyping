@@ -1,9 +1,9 @@
-class CS1 extends Phaser.Scene {
+class Cutscene1 extends Phaser.Scene {
     constructor() {
         super('cs1Scene');
     }
     preload() {
-        this.image.load('goodJob', './assets/Good-Job.png');
+        this.load.image('goodJob', './assets/Good-Job.png');
     }
 
     create() {
