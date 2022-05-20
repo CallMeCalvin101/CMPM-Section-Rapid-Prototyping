@@ -1,4 +1,4 @@
-class CS2 extends Phaser.Scene {
+class Cutscene2 extends Phaser.Scene {
     constructor() {
         super('cs2Scene');
     }
