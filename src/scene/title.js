@@ -4,10 +4,15 @@ class Title extends Phaser.Scene {
     }
 
     preload() {
-        this.add.text(game.config.width / 2, game.config.height / 2, "Roly Poly: To the End");
+        this.load.image('titleBG', './assets/titlescreen.png')
+
+        //this.add.text(game.config.width / 2, game.config.height / 2, "Roly Poly: To the End");
     }
 
     create() {
+        console.log(game.config.width)
+        console.log(game.config.height)
+        this.title = this.add.sprite(game.config.width/2, game.config.height/2, 'titleBG')
         
         //const button = new Button(80, 30, 'Start Game', config, this, () => this.scene.start("play1Scene"));
 
