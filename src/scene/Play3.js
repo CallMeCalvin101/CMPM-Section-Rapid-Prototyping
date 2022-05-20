@@ -46,8 +46,8 @@ class Play3 extends Phaser.Scene {
         this.enemy2.update();
         this.enemy3.update();
 
-        if (this.destroyedCounter.destroyedCount == 2) {
-            this.scene.start("cs1Scene");
+        if (this.destroyedCounter.destroyedCount == 3) {
+            this.scene.start("victoryScene");
         }
         if (this.enemy1.checkCollision(this.player)) {
             this.enemy1.setSpeed(0);
