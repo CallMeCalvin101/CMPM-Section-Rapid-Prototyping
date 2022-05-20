@@ -7,11 +7,13 @@ class Play2 extends Phaser.Scene {
         this.load.image('rolypoly-normal', './assets/RollyPolly-LayedOut.png');
         this.load.image('rolypoly-rolled', './assets/RollyPolly-BalledUp.png');
         this.load.image('snail', 'assets/Snail.png');
+
+        this.load.image('bg','./assets/Titlescreen1.png');
     }
 
     create() {
-        // Temp BG
-        this.add.rectangle(0, 0, game.config.width, game.config.height, 0xf2f2f2).setOrigin(0);
+        // BG
+        this.background = this.add.tileSprite(0, 0, 640, 480, 'bg').setOrigin(0, 0);
         
         this.txt = this.add.text(0,0, "play2");
         this.txt.setColor(0xFF5733);
@@ -41,6 +43,7 @@ class Play2 extends Phaser.Scene {
     }
     
     update() {
+        this.background.tilePositionX += 1.5;
 
         this.player.update()
         this.enemy1.update();
