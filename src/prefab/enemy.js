@@ -8,7 +8,8 @@ class Enemy extends Phaser.GameObjects.Sprite {
         this.destroyCounter = destroyCounter;
         //this.x = game.config.width;
         this.isDestroyed = false;
-        this.setSpeed(1.5);
+        
+        this.setSpeed(2.5);
 
         // add object to existing scene
         scene.add.existing(this);
