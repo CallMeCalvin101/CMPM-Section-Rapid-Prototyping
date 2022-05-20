@@ -12,6 +12,8 @@ class Player extends Phaser.GameObjects.Sprite {
         this.isJump = false;
         this.canJump = true;
         this.MAX_JUMP_HEIGHT = this.floor - this.jumpHeight;
+
+        this.counter = 0   
     }
 
     jump() {
@@ -23,11 +25,14 @@ class Player extends Phaser.GameObjects.Sprite {
 
     update() {
         if (this.isJump == true) {
+            //time counter
+            this.counter += 1
             this.setTexture(this.jumpState);
             this.y -= this.jumpSpeed;
             if (this.y <= this.MAX_JUMP_HEIGHT) {
                 this.isJump = false;
             }
+            console.log(this.counter)
         }
 
         if (this.isJump == false && this.y < this.floor) {
@@ -38,6 +43,7 @@ class Player extends Phaser.GameObjects.Sprite {
             this.canJump = true;
             this.setTexture(this.normalState);
         }
+
     }
 
 

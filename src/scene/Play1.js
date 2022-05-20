@@ -23,10 +23,19 @@ class Play1 extends Phaser.Scene {
 
         this.input.on('pointerdown', () => {
             this.player.jump();
+            this.playerTween.play();
         });
+
+        //using tweens to add a spin animation to the rolled up sprite
+        this.playerTween = this.tweens.add({
+            targets: this.player,
+            angle: {from: 0, to: 360},
+            duration: 24
+        })
     }
     
     update() {
+
         this.player.update()
         this.enemy1.update();
         this.enemy2.update();
@@ -48,4 +57,5 @@ class Play1 extends Phaser.Scene {
             this.scene.start("titleScene");
         });
     }
+
 }
